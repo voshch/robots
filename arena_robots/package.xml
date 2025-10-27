@@ -9,6 +9,10 @@
   <author email="dev@voshch.dev">Volodymyr Shcherbyna</author>
 
   <license>MIT</license>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <exec_depend>arena_simulation_setup</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
