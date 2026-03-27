@@ -23,6 +23,13 @@ robot_odom_frame: 'odom'
 # 传感器框架名称，假设前置激光雷达的 link 名称为 robot_front_laser_link
 robot_sensor_frame: 'robot_front_laser_link' # 已修改
 
+# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
+# Source: rbsummit_controller_params.yaml  (4WS holonomic, max_vel=1.0 all axes)
+vel_smoother_max_velocity: [1.0, 1.0, 1.0]
+vel_smoother_min_velocity: [-1.0, -1.0, -1.0]
+vel_smoother_max_accel: [1.0, 1.0, 1.0]
+vel_smoother_max_decel: [-1.0, -1.0, -1.0]
+
 # --- 以下参数直接沿用 Jackal 的配置作为起点 ---
 polygons:
   - StopPolygon

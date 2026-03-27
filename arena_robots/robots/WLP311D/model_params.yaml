@@ -90,3 +90,10 @@ robot_model: WLP311D
 robot_radius: 0.40         # FIXME: 实测包络半径 (m)
 robot_sensor_frame: lidar
 z_offset: 0.34
+
+# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
+# Source: WLP311D control.yaml  (max_vel_x=2.0, max_vel_theta=4.0)
+vel_smoother_max_velocity: [2.0, 0.0, 4.0]
+vel_smoother_min_velocity: [-2.0, 0.0, -4.0]
+vel_smoother_max_accel: [20.0, 0.0, 25.0]
+vel_smoother_max_decel: [-20.0, 0.0, -25.0]

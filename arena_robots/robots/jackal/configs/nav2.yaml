@@ -264,6 +264,23 @@ recoveries_server:
     min_rotational_vel: 0.4
     rotational_acc_lim: 3.2
 
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: True
+    smoothing_frequency: 20.0
+    scale_velocities: false
+    feedback: "OPEN_LOOP"
+    # Source: jackal control.yaml  (max_vel_x=2.0, max_vel_theta=4.0)
+    # [linear_x, linear_y, angular_z]
+    max_velocity: [2.0, 0.0, 4.0]
+    min_velocity: [-2.0, 0.0, -4.0]
+    max_accel: [20.0, 0.0, 25.0]
+    max_decel: [-20.0, 0.0, -25.0]
+    odom_topic: odom
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0
+
 collision_monitor:
   ros__parameters:
     base_frame_id: ${frame:-}${robot_base_frame:-base_link}

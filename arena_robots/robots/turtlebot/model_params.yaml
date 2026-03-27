@@ -26,6 +26,13 @@ polygons_dict:
 
 footprint: "[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]"
 
+# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
+# Source: turtlebot control.yaml  (max_vel_x=0.4, max_vel_theta=1.9)
+vel_smoother_max_velocity: [0.4, 0.0, 1.9]
+vel_smoother_min_velocity: [-0.4, 0.0, -1.9]
+vel_smoother_max_accel: [2.0, 0.0, 3.2]
+vel_smoother_max_decel: [-2.0, 0.0, -3.2]
+
 actions:
   continuous:
     angular_range:

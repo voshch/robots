@@ -34,6 +34,13 @@ twist_covariance_diagonal: [1000000.0, 1000000.0, 0.03, 1000000.0, 1000000.0, 0.
 
 robot_odom_frame: 'odom'
 
+# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
+# Source: rbkairos control.yaml  (holonomic/omni, max_vel_x=1.5, max_vel_theta=4.0)
+vel_smoother_max_velocity: [1.5, 1.5, 4.0]
+vel_smoother_min_velocity: [-1.5, -1.5, -4.0]
+vel_smoother_max_accel: [10.0, 10.0, 20.0]
+vel_smoother_max_decel: [-10.0, -10.0, -20.0]
+
 actions:
   continuous:
     angular_range: [-4.0, 4.0]
