@@ -19,6 +19,8 @@
       <publish_odom>true</publish_odom>
       <publish_odom_tf>true</publish_odom_tf>
       <publish_wheel_tf>true</publish_wheel_tf>
+      <frame_id>$(arg sim_path)_odom</frame_id>
+      <child_frame_id>$(arg sim_path)_base_link</child_frame_id>
     </plugin>
   </gazebo>
 
