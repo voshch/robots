@@ -33,8 +33,6 @@ robot_odom_frame: odom
 
 # --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
 # Source: rskomnidirectional control.yaml  (omnidirectional, max_vel_x=y=2.0, max_vel_theta=4.0)
-vel_smoother_max_velocity: [2.0, 2.0, 4.0]
-vel_smoother_min_velocity: [-2.0, -2.0, -4.0]
 vel_smoother_max_accel: [20.0, 20.0, 25.0]
 vel_smoother_max_decel: [-20.0, -20.0, -25.0]
 actions:

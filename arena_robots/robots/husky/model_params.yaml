@@ -64,7 +64,5 @@ z_offset: 0.37 # <--- 关键改动：Husky激光雷达的离地高度
 
 # --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
 # Source: husky control.yaml  (max_vel_x=2.0, max_vel_theta=4.0)
-vel_smoother_max_velocity: [2.0, 0.0, 4.0]
-vel_smoother_min_velocity: [-2.0, 0.0, -4.0]
 vel_smoother_max_accel: [20.0, 0.0, 25.0]
 vel_smoother_max_decel: [-20.0, 0.0, -25.0]

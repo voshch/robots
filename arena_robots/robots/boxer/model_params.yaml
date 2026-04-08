@@ -57,8 +57,6 @@ is_holonomic: false
 
 # --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
 # Source: boxer control.yaml  (max_vel_x=2.0, max_vel_theta=2.0, conservative accel)
-vel_smoother_max_velocity: [2.0, 0.0, 2.0]
-vel_smoother_min_velocity: [-2.0, 0.0, -2.0]
 vel_smoother_max_accel: [1.0, 0.0, 2.0]
 vel_smoother_max_decel: [-1.0, 0.0, -2.0]
 

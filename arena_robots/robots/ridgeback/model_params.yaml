@@ -36,8 +36,6 @@ inflation_radius: 0.25
 
 # --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
 # Source: ridgeback control.yaml  (holonomic, max_vel=1.1 x/y, max_theta=1.0)
-vel_smoother_max_velocity: [1.1, 1.1, 1.0]
-vel_smoother_min_velocity: [-1.1, -1.1, -1.0]
 vel_smoother_max_accel: [2.0, 2.0, 2.0]
 vel_smoother_max_decel: [-2.0, -2.0, -2.0]
 
