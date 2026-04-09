@@ -44,6 +44,8 @@ robot_base_frame: 'base_link'
 robot_odom_frame: 'odom'
 
 actions:
+  acceleration: [20.0, 0.0, 25.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-20.0, 0.0, -25.0]
   continuous:
     angular_range:
     - -4.0

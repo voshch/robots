@@ -36,6 +36,8 @@ robot_base_frame: 'base_link'
 robot_odom_frame: 'odom'
 
 actions:
+  acceleration: [3.0, 0.0, 5.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-3.0, 0.0, -5.0]
   continuous:
     angular_range: # same as jackal
     - -4.0

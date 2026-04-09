@@ -54,6 +54,8 @@ robot_odom_frame: odom
 #  Discrete / continuous action sets (用于 RL / 多机器人任务)
 # ------------------------------------------------------------
 actions:
+  acceleration:  [ 20.0,  0.0, 25.0 ]  # [linear_x, linear_y, angular_z] m/s²
+  deceleration:  [-20.0,  0.0, -25.0]
   continuous:
     linear_range:  [ -2.0,  2.0 ]
     angular_range: [ -4.0,  4.0 ]
@@ -90,3 +92,4 @@ robot_model: WLP311D
 robot_radius: 0.40         # FIXME: 实测包络半径 (m)
 robot_sensor_frame: lidar
 z_offset: 0.34
+

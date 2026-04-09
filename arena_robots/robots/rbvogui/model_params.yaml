@@ -58,6 +58,8 @@ robot_odom_frame: 'odom'
 # MODIFIED: Updated to reflect the holonomic movement and the limits
 # specified in the new controller file (linear: 0.3 m/s, angular: 0.3 rad/s).
 actions:
+  acceleration: [1.0, 1.0, 1.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-1.0, -1.0, -1.0]
   continuous:
     angular_range:
     - -0.3

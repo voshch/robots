@@ -46,6 +46,8 @@ planner_plugins_dict:
     allow_unknown: true
 
 actions:
+  acceleration: [1.0, 1.0, 1.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-1.0, -1.0, -1.0]
   continuous:
     angular_range:
     - -4.0

@@ -26,7 +26,10 @@ polygons_dict:
 
 footprint: "[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]"
 
+# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
 actions:
+  acceleration: [2.0, 0.0, 3.2]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-2.0, 0.0, -3.2]
   continuous:
     angular_range:
     - -1.9
