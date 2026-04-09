@@ -43,12 +43,9 @@ footprint: "[ [0.1, 0.1], [0.1, -0.1], [-0.1, -0.1], [-0.1, 0.1] ]"
 robot_base_frame: 'base_link'
 robot_odom_frame: 'odom'
 
-# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
-# Source: jackal control.yaml  (max_vel_x=2.0, max_vel_theta=4.0)
-vel_smoother_max_accel: [20.0, 0.0, 25.0]
-vel_smoother_max_decel: [-20.0, 0.0, -25.0]
-
 actions:
+  acceleration: [20.0, 0.0, 25.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-20.0, 0.0, -25.0]
   continuous:
     angular_range:
     - -4.0

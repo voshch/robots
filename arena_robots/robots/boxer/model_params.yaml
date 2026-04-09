@@ -27,6 +27,8 @@ polygons_dict:
     polygon_pub_topic: polygon_stop
     visualize: true
 actions:
+  acceleration: [1.0, 0.0, 2.0]   # [linear_x, linear_y, angular_z] m/s²
+  deceleration: [-1.0, 0.0, -2.0]
   discrete:
   - angular: 0.0
     linear: 0.3
@@ -54,11 +56,6 @@ actions:
     - -2.0
     - 2.0
 is_holonomic: false
-
-# --- Velocity Smoother: [linear_x, linear_y, angular_z] ---
-# Source: boxer control.yaml  (max_vel_x=2.0, max_vel_theta=2.0, conservative accel)
-vel_smoother_max_accel: [1.0, 0.0, 2.0]
-vel_smoother_max_decel: [-1.0, 0.0, -2.0]
 
 laser:
   angle:
