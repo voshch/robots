@@ -8,6 +8,7 @@ from arena_simulation_setup.tree import Identifier, PathView, SimplePathResolver
 from arena_simulation_setup.utils.models import ModelWrapper
 from arena_simulation_setup.utils.models.model_loader import (
     ModelProvider_URDF,
+    ModelProvider_USD,
 )
 
 
@@ -16,7 +17,8 @@ class ModelParams(dict[str, typing.Any]):
     def from_yaml(cls, path: str) -> 'ModelParams':
         with open(path) as f:
             data = yaml.safe_load(f)
-            assert isinstance(data, dict), f"Top-level structure in {path} must be a mapping"
+            if not isinstance(data, dict):
+                raise ValueError(f"Top-level structure in {path} must be a mapping")
             return cls(data)
 
     @property
@@ -41,7 +43,12 @@ class RobotView(PathView):
     @property
     def model_params(self) -> ModelParams:
         if self._cached_params is None:
-            self._cached_params = ModelParams.from_yaml(str(self.path / 'model_params.yaml'))
+            path = self.path / 'model_params.yaml'
+            if not path.is_file():
+                raise FileNotFoundError(
+                    f"model_params.yaml not found for robot '{self.name}' at {path}"
+                )
+            self._cached_params = ModelParams.from_yaml(str(path))
         return self._cached_params
 
     @property
@@ -50,9 +57,15 @@ class RobotView(PathView):
 
     @property
     def control(self) -> dict:
-        with open(self.path / 'control.yaml') as f:
+        control_path = self.path / 'control.yaml'
+        if not control_path.is_file():
+            raise FileNotFoundError(
+                f"control.yaml not found for robot '{self.name}' at {control_path}"
+            )
+        with open(control_path) as f:
             mapping = yaml.safe_load(f)
-            assert isinstance(mapping, dict), "Control file must contain a dictionary at the top level."
+            if not isinstance(mapping, dict):
+                raise ValueError(f"Control file {control_path} must contain a dictionary at the top level.")
             return mapping
 
     @property
@@ -61,6 +74,7 @@ class RobotView(PathView):
             self.name,
             {
                 **ModelProvider_URDF.asdict(self.path, self.name),
+                **ModelProvider_USD.asdict(self.path, self.name),
             }
         )
 
